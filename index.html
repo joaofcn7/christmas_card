@@ -1,0 +1,138 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<style type="text/css">
+			.card {
+				display: grid; 
+				grid-template-rows: repeat(3, 200px); 
+				grid-template-columns: repeat(3, 270px); 
+				background: url(assets/card.png) , url(https://acegif.com/wp-content/uploads/gif/snwflks-35.gif)  no-repeat; 
+				background-size: 100% 100%; 
+				background-clip: border-box; 
+				margin: auto; 
+				width: 810px; 
+				height: 600px
+			}
+			.merry_christmas {
+				grid-row: 2; 
+				grid-column: 2;
+				align-self: center;
+			}
+			.merry_christmas img {
+				float: left; 
+				clear: both; 
+				display: block;
+				width: 400px;
+			}
+
+			.santaclaus {
+				grid-row: 2;
+				grid-column: 1;
+			}
+
+			.santaclaus img {
+				float: left; 
+				clear: both; 
+				display: block;
+				width: 100px;
+			}
+
+			.christmas_gifts{
+				grid-row: 3; 
+				grid-column: 3; 
+				align-self: end;
+			}
+			.christmas_gifts img {
+				float: right; 
+				clear: both; 
+				display: block;
+				width: 400px;
+			}
+
+			.back_sound {
+				grid-row: 3; 
+				grid-column: 1; 
+				align-self: end;
+			}
+
+			.audio {
+				overflow: hidden;
+				position: relative;
+				margin-left: 20px;
+				display: inline;
+			}
+			#myaudio {
+				width: 80px; 
+				height: 30px;
+				float: left; 
+				clear: both; 
+				display:block;
+				background-color: black;
+			}
+			.bars{
+				width: 46px;
+				height: 30px;
+				overflow: hidden;
+				position: relative;
+				margin-left: 20px;
+				display: inline-block;
+			}
+			.bar {
+				background: #666;
+				bottom: 1px;
+				height: 3px;
+				width: 3px;      
+				animation: sound 0ms -800ms linear infinite alternate;
+				position: absolute;
+				left: 0;
+			}
+			@keyframes sound {
+				0% {
+					opacity: .35;
+					height: 3px; 
+				}
+				100% {
+					opacity: 1;       
+					height: 28px;        q
+				}
+			}
+
+			.bar:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+			.bar:nth-child(2)  { left: 5px; animation-duration: 433ms; }
+			.bar:nth-child(3)  { left: 9px; animation-duration: 407ms; }
+			.bar:nth-child(4)  { left: 13px; animation-duration: 458ms; }
+			.bar:nth-child(5)  { left: 17px; animation-duration: 400ms; }
+		</style>
+	</head>
+	<body>
+		<div  class="card">
+			<div  class="merry_christmas">
+				<img src="assets/merry_christmas.png">
+			</div>
+			<div class="santaclaus">
+				<img src="assets/santaclaus.png">
+			</div>
+			<div class="christmas_gifts" >
+				<img src="assets/christmas_gifts.png">
+			</div>
+			<div class="back_sound">
+				<div class="bars">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<div class="audio">
+					<audio autoplay loop controls id="myaudio">
+						<source src="assets/We_Wish_You_a_Merry_Christmas.mp3" type="audio/mpeg" />
+					</audio> 
+					<script>
+						var audio = document.getElementById("myaudio");
+						audio.volume = 0.1;
+					</script> 
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
